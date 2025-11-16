@@ -1,16 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+   <Fistcomponent
+   />
+     
+    <Formcomponente
+     
+    />
+ 
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import Fistcomponent from './components/FirstComponent.vue'
+import Formcomponente from './components/FormComponente.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Fistcomponent,
+    Formcomponente,
+  },
+  data(){
+    return{
+      showForm:true,
+      //quemsera:''
+    }
   }
+  
 }
 </script>
 

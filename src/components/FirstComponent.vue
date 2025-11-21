@@ -4,10 +4,17 @@
      v-for="(obj, index) in baba"
      
     v-bind:key="obj.id"
+    
     >   
-    {{ index }} - {{ obj.nome }} - {{ obj.idade }} - {{ obj.numero }}
+    <img
+     v-if="obj.imagem"
+     :src="obj.imagem"
+    >
+    {{ index }} - {{ obj.nome }} - {{ obj.idade }} - {{ obj.numero }} 
 
     </div>
+
+
   </body>
   <header class="header">
     <h1></h1>
@@ -23,8 +30,9 @@ export default {
         {
           "id": 1,
           "nome": 'isaac',
-          "idade": 16
-          ,"numero": 55_84987654321
+          "idade": 16,
+          "numero": 55_84987654321,
+          "imagem": ""
         },
         {
           "id": 2,

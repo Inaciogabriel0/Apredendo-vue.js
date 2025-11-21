@@ -1,12 +1,9 @@
-<template>
+<template >
     <body>
-        
-    </body>
-    <div>
-        <form action="FirstComponent.vue" class="form">
-            <h1>faça login</h1>
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name">
+         <form class="form">
+            <h1>Cadastro</h1>
+            <label  for="name">Nome:</label>
+            <input v-model="name" type="text" id="name" name="name">
             <br>
             <label for="email">Email:</label>
             <input type="email" id="email" name="email">
@@ -14,23 +11,38 @@
             <label for="message">senha:</label>
             <input type="password" id="senha" name="senha">
             <br>
-            <input class="butao" type="submit" value="enviar">
-        </form>
-    </div>
+            <button @click="cadastrar" >cadastre se</button>
+       </form>
+    </body>
 </template>
 <script>
 export default {
-    name: 'FormComponente',
+    name : 'HomePage',
+
     data() {
         return {
-          
+            name: "",
         };
     },
+    methods: {
+        cadastrar() {
+           if (this.name.trim() !== ''){
+            this.$router.push("/login");
+           }else{
+            alert("Por favor, preencha o campo nome.");
+           }
+        }
+    },
 }
-
 </script>
 <style>
-  .form{
+    body {
+        background-color: #652ba7;
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    form{
         display: flex;
         flex-direction: column;
         width: 300px;
@@ -43,9 +55,12 @@ export default {
         background-color: white;
         border-radius: 5%;
         box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
-
-  }  
-    .butao{
+    }
+    h1{
+        text-align: center;
+        color: #6e378d;
+    }
+    button{
             margin-top: 10px;
             padding: 10px;
             background-color: #6e378d;
@@ -53,24 +68,5 @@ export default {
             border: none;
             border-radius: 5px;
             cursor: pointer;
-    }
-    label{
-        margin-top: 10px;
-        margin-bottom: 5px;
-    }
-    input{
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-    }
-    body {
-        background-color: #652ba7;
-        font-family: 'Roboto', sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-    h1{
-        text-align: center;
-        color: #6e378d;
     }
 </style>

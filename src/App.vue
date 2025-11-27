@@ -1,36 +1,28 @@
-<template>
+<template>  
   
-  <router-view>
-
-  </router-view>
-
-  
-  <button @click="login()">Go</button>
-  
+  <HelloWorld>
+  </HelloWorld>
+  {{ $store.state.user.email }}
 </template>
 
 <script>
+
+import HelloWorld from './components/HelloWorld.vue';
+
 
 
 
 export default {
   name: 'App',
   components: {
-   
-    
+    HelloWorld
   },
-  methods: {
-    login(){
-      this.$router.push('/hello')
-    }
+  created() {
+    console.log();
   }
-  
 }
 </script>
 
 <style>
-.hello {
-  font-size: 20px;
-  
-}
+
 </style>

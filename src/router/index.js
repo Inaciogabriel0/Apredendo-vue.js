@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HelloWorld from '@/components/HelloWorld.vue';
+
 
 const route = [
-    { path: '/hello', component: HelloWorld  },
+   
  
 ]
 

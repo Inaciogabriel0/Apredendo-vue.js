@@ -1,4 +1,4 @@
-# aprender-vue
+# Apredendo vue.js
 
 ## Project setup
 ```

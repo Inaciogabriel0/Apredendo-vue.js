@@ -1,8 +1,23 @@
 <template>  
-  
-  <HelloWorld>
-  </HelloWorld>
-  {{ $store.state.user.email }}
+ <div>
+    <HelloWorld />
+    <p>Nome atual: {{ $store.state.user.name }}</p>
+    <p>idade atual: {{ $store.state.user.idade }}</p>
+
+    <form @submit.prevent="atualizar">
+      <input 
+        v-model="name" 
+        type="text" 
+        placeholder="Digite o novo nome"
+      >
+      <input 
+      v-model.number="idade"
+      type="number"
+      placeholder="digite sua idade"
+      >
+      <button type="submit">Alterar Nome</button>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -17,10 +32,25 @@ export default {
   components: {
     HelloWorld
   },
-  created() {
-    console.log();
-  }
+
+  data() {
+    return {
+     name: '',
+     idade: ''
+
+    }
+  },
+  methods: {
+    atualizar(){
+      const newUser = {
+      name: this.name,
+      idade: this.idade
+      }
+    this.$store.commit('storeUser', newUser)
+    
 }
+}
+};
 </script>
 
 <style>

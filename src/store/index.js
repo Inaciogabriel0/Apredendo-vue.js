@@ -4,8 +4,8 @@ export default createStore({
   state() {
     return {
       user: {
-        name: 'Inácio',
-        idade: 25,
+        name: 'sem nome',
+        idade: 'sem idade',
         email: 'inacioemail@gmail.com'
       }
     }
@@ -13,9 +13,9 @@ export default createStore({
   },
 
   mutations: {
-    increment(state) {
-      state.count++
-    }
+   storeUser(state, palyload) {
+      state.user = palyload
+   }
   },
   actions: {
     
